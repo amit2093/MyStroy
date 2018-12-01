@@ -39,7 +39,4 @@ public class FeedsServiceImpl implements FeedsService{
 	public Optional<Feeds> getFeed(int feedId) {
 		return feedsRepository.findById(feedId);
 	}
-
-
-
 }
