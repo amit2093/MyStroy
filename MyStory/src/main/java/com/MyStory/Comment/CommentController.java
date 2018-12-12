@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.MyStory.Person.PersonDto;
+import com.MyStory.Utils.ConfigMain;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 public class CommentController {
 
 	private int i = 1;
@@ -22,8 +23,8 @@ public class CommentController {
 	@Autowired
 	private CommentService commentService;
 	
-	@GetMapping("/saveComment")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(ConfigMain.SAVE_COMMENT)
+	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	 public void create(@RequestBody CommentDto commentDto){ 
 		System.out.println("" + commentDto.getComment());
 		commentDto.setComment("Comment " + i);
@@ -35,8 +36,8 @@ public class CommentController {
 		//commentService.create(commentDto);
     }
 	
-	@GetMapping("/getAllComments")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(ConfigMain.GET_ALL_COMMENTS)
+	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	public List<Comment> getAllPerson() {
 		return commentService.getAllComments();
 	}
