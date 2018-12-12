@@ -18,7 +18,6 @@ public class FeedsController {
 	@Autowired
 	private FeedsService feedsService;
 	
-	
 	@GetMapping(ConfigMain.SAVE_FEEDS)
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
     public void create(FeedsDto feedsDto){ 
