@@ -11,7 +11,7 @@ public class ConfigMain {
 	public static final String GET_ALL_COMMENTS = "/getAllComments";
 	public static final String SAVE_COMMENT = "/saveComment";
 	
-	public static final String GET_ALL_PERSONS= "getAllPersons";
+	public static final String GET_ALL_PERSONS= "/getAllPersons";
 	public static final String SAVE_PERSON = "/savePerson";
 	
 }

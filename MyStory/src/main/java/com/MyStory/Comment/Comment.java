@@ -1,5 +1,7 @@
 package com.MyStory.Comment;
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,21 +30,26 @@ public class Comment {
 	@Column
 	private int feedId;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "person_fk")
-	private Person person;
+	@OneToMany(mappedBy="person_Id")
+	private Set<Person> person;
 
-	public Person getPerson() {
-		return person;
-	}
-
-	public void setPerson(Person person) {
-		this.person = person;
-	}
+	
 	
 //	public int getFeedId() {
 //		return feedId;
 //	}
+
+	public Set<Person> getPerson() {
+		return person;
+	}
+
+	public void setPerson(Set<Person> person) {
+		this.person = person;
+	}
+
+	public int getFeedId() {
+		return feedId;
+	}
 
 	public void setFeedId(int feedId) {
 		this.feedId = feedId;

@@ -1,6 +1,8 @@
 package com.MyStory.Comment;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,6 +27,7 @@ public class CommentController {
 	 public void create(@RequestBody CommentDto commentDto){ 
 		System.out.println("" + commentDto.getComment());
 		commentDto.setComment("Comment " + i);
+		
 		PersonDto personDto = new PersonDto();
 		personDto.setId(i);		
 		commentDto.setFeedId(1);

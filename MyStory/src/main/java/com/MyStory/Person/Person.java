@@ -1,8 +1,9 @@
 package com.MyStory.Person;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,7 +23,8 @@ public class Person {
 	@Column
 	private String email;
 	
-	@OneToOne(mappedBy = "person")
+	@ManyToOne
+	@JoinColumn(name="comment_id")
 	private Comment commentId;
 
 	public int getPerson_Id() {
