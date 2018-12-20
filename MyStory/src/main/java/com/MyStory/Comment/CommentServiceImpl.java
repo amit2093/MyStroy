@@ -34,7 +34,6 @@ public class CommentServiceImpl implements CommentService{
 	@Override
 	public List<Comment> getAllComments() {
 		List<Comment> commentList = new ArrayList<Comment>();
-		
 		Iterable<Comment> iterable = commentRepository.findAll();
 		Iterator<Comment> iterator = iterable.iterator();
 		while(iterator.hasNext()) {
