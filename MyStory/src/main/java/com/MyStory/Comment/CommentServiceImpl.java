@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.MyStory.Person.Person;
-import com.MyStory.Person.PersonDto;
 
 @Service
 public class CommentServiceImpl implements CommentService{
