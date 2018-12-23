@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.MyStory.Profile.Profile;
+import com.MyStory.Profile.ProfileDto;
+
 @Repository
 public interface Friendship_RequestService {
 
 	public Friendship_Request create(Friendship_RequestDto friendship_RequestDto);
 	
-	public List<Friendship_Request>getAllFriends(int Profile_Key);
+	public List<?>getAllFriends(int Profile_Key);
 }

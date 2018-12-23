@@ -1,10 +1,12 @@
 package com.MyStory.Profile;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.MyStory.Utils.ConfigMain;
@@ -31,6 +33,18 @@ public class ProfileController {
 		profileDto.setTotal_Requests(5);
 		
 		profileService.create(profileDto);
-		
 	}
+	
+	@GetMapping(ConfigMain.GET_PROFILE_BY_ID)
+	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
+	public Profile getProfileById(@PathVariable("Profile_Key") int Profile_Key){
+		return profileService.getProfileById(Profile_Key);
+	}
+
+	@GetMapping(ConfigMain.GET_ALL_PROFILES_FOR_SEARCH)
+	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
+	public List<Profile> getAllProfiles(){
+		return profileService.getAllProfiles();
+	}
+	
 }

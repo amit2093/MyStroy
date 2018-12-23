@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.MyStory.Profile.Profile;
+import com.MyStory.Profile.ProfileDto;
 import com.MyStory.Utils.ConfigMain;
 
 @RestController
@@ -30,9 +32,9 @@ public class Friendship_RequestController {
 		friendship_RequestService.create(friendship_RequestDto);
 	}
 	
-	@GetMapping(ConfigMain.GET_ALL_FRIENDS)
+	@GetMapping(ConfigMain.GET_ALL_FRIENDS_BY_ID)
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
-	public List<Friendship_Request> getAllFriends(@PathVariable("Profile_Key") int Profile_Key) {
+	public List<?> getAllFriends(@PathVariable("Profile_Key") int Profile_Key) {
 		return friendship_RequestService.getAllFriends(Profile_Key);
 	}
 }

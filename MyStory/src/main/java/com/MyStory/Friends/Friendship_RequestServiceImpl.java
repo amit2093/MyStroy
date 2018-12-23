@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.MyStory.Profile.Profile;
+import com.MyStory.Profile.ProfileDto;
+
 @Service
 public class Friendship_RequestServiceImpl implements Friendship_RequestService{
 
@@ -25,7 +28,7 @@ public class Friendship_RequestServiceImpl implements Friendship_RequestService{
 	}
 
 	@Override
-	public List<Friendship_Request> getAllFriends(int Profile_Key) {
+	public List<?> getAllFriends(int Profile_Key) {
 		return friendship_RequestRepository.getAllFriends(Profile_Key);
 	}
 }

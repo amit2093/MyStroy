@@ -1,5 +1,7 @@
 package com.MyStory.Profile;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,15 @@ public class ProfileServiceImpl implements ProfileService{
 		profile.setTotal_Requests(profileDto.getTotal_Requests());
 		return profileRepository.save(profile);
 	}
-	
-	
+
+	@Override
+	public Profile getProfileById(int Profile_Key) {
+		
+		return profileRepository.getProfileById(Profile_Key);
+	}
+
+	@Override
+	public List<Profile> getAllProfiles() {
+		return profileRepository.getAllProfiles();
+	}
 }

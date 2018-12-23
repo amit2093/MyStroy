@@ -14,11 +14,17 @@ public class ConfigMain {
 	public static final String GET_ALL_PERSONS= "/getAllPersons";
 	public static final String SAVE_PERSON = "/savePerson";
 	
+	
+	
 	public static final String SAVE_PROFILE = "/saveProfile";
 	
 	public static final String CREATE_FRIENDSHIP_REQUEST = "/createFriendshipRequest";
 	
 	public static final String FRIEND_WITH = "/friendWith";
 	
-	public static final String GET_ALL_FRIENDS = "/getAllFriends/{Profile_Key}";
+	public static final String GET_ALL_FRIENDS_BY_ID = "/getAllFriends/{Profile_Key}";
+	
+	public static final String GET_PROFILE_BY_ID = "/getProfile/{Profile_Key}";
+	
+	public static final String GET_ALL_PROFILES_FOR_SEARCH = "/getAllProfiles";
 }
