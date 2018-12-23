@@ -15,6 +15,13 @@ public class ConfigMain {
 	public static final String SAVE_PERSON = "/savePerson";
 	
 	
+	public static final String CREATE_NEW_MESSAGE = "/createMessage";
+	
+	public static final String GET_ALL_CHATS = "/Chats";
+	
+	public static final String GET_CHAT_BY_IDS = "/GetMessage/{PersonMessageToSee_Key}/{loggedInUserProfileKey}";
+	
+	public static final String GET_ALL_ONLINE_FRIENDS = "/getAllOnlineFriends/{loggedInUserProfileKey}";
 	
 	public static final String SAVE_PROFILE = "/saveProfile";
 	

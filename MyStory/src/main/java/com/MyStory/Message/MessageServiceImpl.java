@@ -27,8 +27,17 @@ public class MessageServiceImpl implements MessageService{
 
 	@Override
 	public List<?> getMessagae(int PersonMessageToSee_Key, int loggedInUserProfileKey) {
-		System.out.println(PersonMessageToSee_Key + "  " + loggedInUserProfileKey);
 		return messageRepository.findMessageById(PersonMessageToSee_Key, loggedInUserProfileKey);
+	}
+
+	@Override
+	public List<?> getAllChats(int loggedInUserProfileKey) {
+		return messageRepository.getAllChats(loggedInUserProfileKey);
+	}
+
+	@Override
+	public List<?> getAllOnlineFriends(int loggedInUserProfileKey) {
+		return messageRepository.getAllOnlineFriends(loggedInUserProfileKey);
 	}
 
 }

@@ -17,10 +17,12 @@ import com.MyStory.Utils.ConfigMain;
 @CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 public class MessageController {
 
+	private int loggedInUserProfileKey = 1;   
+	
 	@Autowired 
 	MessageService messageService;
 	
-	@GetMapping("/Message")
+	@GetMapping(ConfigMain.CREATE_NEW_MESSAGE)
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	public void createMessage(MessageDto messageDto) {
 		
@@ -32,9 +34,19 @@ public class MessageController {
 		messageService.create(messageDto);
 	}
 	
-	@GetMapping("/GetMessage/{PersonMessageToSee_Key}/{loggedInUserProfileKey}")
+	@GetMapping(ConfigMain.GET_ALL_CHATS)
+	public List<?> getAllChats(){
+		return messageService.getAllChats(loggedInUserProfileKey);
+	}
+	
+	@GetMapping(ConfigMain.GET_CHAT_BY_IDS)
 	public  List<?> getMessageByMessage_From(@PathVariable("PersonMessageToSee_Key") int PersonMessageToSee_Key, 
 			@PathVariable("loggedInUserProfileKey") int loggedInUserProfileKey) {
 		return messageService.getMessagae(PersonMessageToSee_Key, loggedInUserProfileKey);
+	}
+	
+	@GetMapping(ConfigMain.GET_ALL_ONLINE_FRIENDS)
+	public List<?> getAllOnlineFriends(@PathVariable("loggedInUserProfileKey") int loggedInUserProfileKey){
+		return messageService.getAllOnlineFriends(loggedInUserProfileKey);
 	}
 }
