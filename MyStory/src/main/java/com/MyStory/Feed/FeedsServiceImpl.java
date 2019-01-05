@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.MyStory.Image.Images;
 import com.MyStory.Profile.Profile;
 
 @Service
@@ -21,6 +22,9 @@ public class FeedsServiceImpl implements FeedsService{
 		Profile profile = new Profile();
 		profile.setProfile_Key(feedsDto.getFeed_Uploaded_By().getProfile_Key());
 		
+//		Images images = new Images();
+//		images.setImage_Key(feedsDto.getImage_Of_Feed_Key().getImage_Key());
+		
 		Feeds feeds = new Feeds();
 		feeds.setFeed_Key(feedsDto.getFeed_Key());
 		feeds.setFeed_Title(feedsDto.getFeed_Title());
@@ -28,7 +32,7 @@ public class FeedsServiceImpl implements FeedsService{
 		feeds.setTotal_Likes(feedsDto.getTotal_Likes());
 		feeds.setFeed_Upload_Date(feedsDto.getFeed_Upload_Date());
 		feeds.setFeed_Uploaded_By(profile);
-		feeds.setImage_Url(feedsDto.getImage_Url());
+//		feeds.setImage_Of_Feed_Key(images);
 		feeds.setIs_Feed_Deleted(feedsDto.isIs_Feed_Deleted());
 		feeds.setTotal_Views(feedsDto.getTotal_Views());
 		
@@ -52,5 +56,11 @@ public class FeedsServiceImpl implements FeedsService{
 	@Override
 	public Optional<Feeds> getFeed(int feed_key) {
 		return feedsRepository.findById(feed_key);
+	}
+
+	@Override
+	public List<Feeds> getAllFeedsByProfileKey(int Profile_Key) {
+		System.out.println("Profile_Key " + Profile_Key);
+		return feedsRepository.getAllFeedsByProfileKey(Profile_Key);
 	}
 }

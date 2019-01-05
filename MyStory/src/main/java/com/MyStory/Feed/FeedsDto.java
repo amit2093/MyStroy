@@ -1,7 +1,10 @@
 package com.MyStory.Feed;
 
 import java.util.Date;
+import java.util.Set;
 
+import com.MyStory.Image.Images;
+import com.MyStory.Image.ImagesDto;
 import com.MyStory.Profile.ProfileDto;
 
 public class FeedsDto {
@@ -14,7 +17,9 @@ public class FeedsDto {
 	
 	private String Feed_Description;
 	
-	private String Image_Url;
+//	private String Image_Url;
+	
+	private Set<ImagesDto> Image_Of_Feed_Key;
 	
 	private int Total_Likes;
 	
@@ -57,16 +62,24 @@ public class FeedsDto {
 		Feed_Description = feed_Description;
 	}
 
-	public String getImage_Url() {
-		return Image_Url;
-	}
-
-	public void setImage_Url(String image_Url) {
-		Image_Url = image_Url;
-	}
-
+//	public String getImage_Url() {
+//		return Image_Url;
+//	}
+//
+//	public void setImage_Url(String image_Url) {
+//		Image_Url = image_Url;
+//	}
+	
 	public int getTotal_Likes() {
 		return Total_Likes;
+	}
+
+	public Set<ImagesDto> getImage_Of_Feed_Key() {
+		return Image_Of_Feed_Key;
+	}
+
+	public void setImage_Of_Feed_Key(Set<ImagesDto> image_Of_Feed_Key) {
+		Image_Of_Feed_Key = image_Of_Feed_Key;
 	}
 
 	public void setTotal_Likes(int total_Likes) {

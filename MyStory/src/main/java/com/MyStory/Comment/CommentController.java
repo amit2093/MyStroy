@@ -24,14 +24,14 @@ public class CommentController {
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	public void create(CommentDto commentDto){ 
 		ProfileDto profileDto = new ProfileDto();
-		profileDto.setProfile_Key(1);
+		profileDto.setProfile_Key(2);
 		
 		FeedsDto feedsDto = new FeedsDto();
 		feedsDto.setFeed_Key(1);
 		
-		commentDto.setComment_Key(1);
+		commentDto.setComment_Key(3);
 		commentDto.setComment_By(profileDto);
-		commentDto.setComment_Body("1st Comment");
+		commentDto.setComment_Body("2nd Comment");
 		commentDto.setComment_On(feedsDto);
 		commentDto.setComment_Date(new Date());
 		commentDto.setHas_Replies(false);
@@ -50,15 +50,15 @@ public class CommentController {
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	public void createReply(ReplyDto replyDto){ 
 		CommentDto commentDto = new CommentDto();
-		commentDto.setComment_Key(1);
+		commentDto.setComment_Key(3);
 		
 		ProfileDto profileDto = new ProfileDto();
 		profileDto.setProfile_Key(1);
 		
-		replyDto.setReply_Key(1);
+		replyDto.setReply_Key(5);
 		replyDto.setReply_By(profileDto);
-		replyDto.setReply_Body("1st Reply");
-		replyDto.setReply_On_Comment_Key(1);
+		replyDto.setReply_Body("5th Reply");
+		replyDto.setReply_On_Comment_Key(2);
 		replyDto.setReply_Date(new Date());
 		replyDto.setIs_Reply_Deleted(false);
 		

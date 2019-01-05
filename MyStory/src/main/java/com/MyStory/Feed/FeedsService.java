@@ -12,5 +12,7 @@ public interface FeedsService {
 	
 	public List<Feeds> getAllFeeds();
 	
+	public List<Feeds> getAllFeedsByProfileKey(int Profile_Key);
+	
 	public Optional<Feeds> getFeed(int feedId);
 }

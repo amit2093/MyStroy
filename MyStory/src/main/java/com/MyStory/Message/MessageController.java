@@ -24,9 +24,9 @@ public class MessageController {
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	public void createMessage(MessageDto messageDto) {
 		
-		messageDto.setMessage_From(3);
-		messageDto.setMessage_To(1);
-		messageDto.setMessage_Body("ok");
+		messageDto.setMessage_From(1);
+		messageDto.setMessage_To(3);
+		messageDto.setMessage_Body("What Ok??");
 		messageDto.setMessage_Date(new Date());
 		messageDto.setIs_Messsage_Deleted(false);
 		messageService.create(messageDto);

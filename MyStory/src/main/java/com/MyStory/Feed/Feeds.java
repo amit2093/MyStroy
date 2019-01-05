@@ -1,14 +1,18 @@
 package com.MyStory.Feed;
 
 import java.util.Date;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.MyStory.Image.Images;
 import com.MyStory.Profile.Profile;
 
 @Entity
@@ -29,8 +33,11 @@ public class Feeds {
 	@Column(name = "Feed_Description")
 	private String Feed_Description;
 	
-	@Column(name = "Image_Url")
-	private String Image_Url;
+//	@Column(name = "Image_Url")
+//	private String Image_Url;
+	
+	@OneToMany(mappedBy="Image_Of_Feed_Key")
+	private Set<Images> Image_Of_Feed_Key;
 	
 	@Column(name = "Total_Likes")
 	private int Total_Likes;
@@ -84,16 +91,24 @@ public class Feeds {
 		Total_Likes = total_Likes;
 	}
 
-	public String getImage_Url() {
-		return Image_Url;
-	}
-
-	public void setImage_Url(String image_Url) {
-		Image_Url = image_Url;
-	}
-
+//	public String getImage_Url() {
+//		return Image_Url;
+//	}
+//
+//	public void setImage_Url(String image_Url) {
+//		Image_Url = image_Url;
+//	}
+	
 	public int getTotal_Views() {
 		return Total_Views;
+	}
+
+	public Set<Images> getImage_Of_Feed_Key() {
+		return Image_Of_Feed_Key;
+	}
+
+	public void setImage_Of_Feed_Key(Set<Images> image_Of_Feed_Key) {
+		Image_Of_Feed_Key = image_Of_Feed_Key;
 	}
 
 	public void setTotal_Views(int total_Views) {

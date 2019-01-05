@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.MyStory.Image.Images;
+import com.MyStory.Image.ImagesDto;
 import com.MyStory.Profile.ProfileDto;
 import com.MyStory.Utils.ConfigMain;
 
@@ -24,17 +26,17 @@ public class FeedsController {
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
     public void create(FeedsDto feedsDto){ 
 		ProfileDto profileDto = new ProfileDto();
-		profileDto.setProfile_Key(1);
+		profileDto.setProfile_Key(3);
 		
-		feedsDto.setFeed_Key(1);
-		feedsDto.setFeed_Title("Feed Title");
-		feedsDto.setFeed_Description("This is a feed description.");
+		feedsDto.setFeed_Key(3);
+		feedsDto.setFeed_Title("Feed Title 3");
+		feedsDto.setFeed_Description("This is a feed description. 2 This is a feed description. 2 This is a feed description. 2");
 		feedsDto.setFeed_Upload_Date(new Date());
-		feedsDto.setTotal_Likes(14);
+		feedsDto.setTotal_Likes(10);
 		feedsDto.setFeed_Uploaded_By(profileDto);
-		feedsDto.setImage_Url("www.feeds/Image/Url");
+//		feedsDto.setImage_Of_Feed_Key(imagesDto);
 		feedsDto.setIs_Feed_Deleted(false);
-		feedsDto.setTotal_Views(542);
+		feedsDto.setTotal_Views(58741);
 		feedsService.create(feedsDto);
     }
 	
@@ -42,6 +44,12 @@ public class FeedsController {
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	public List<Feeds> getAllFeeds() {
 		return feedsService.getAllFeeds();
+	}
+	
+	@GetMapping("/getAllFeedsByProfileKey/{Profile_Key}")
+	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
+	public List<Feeds> getAllFeedsByProfileKey(@PathVariable("Profile_Key") int Profile_Key) {
+		return feedsService.getAllFeedsByProfileKey(Profile_Key);
 	}
 	
 	@GetMapping(ConfigMain.GET_FEED_VIA_FEED_ID)

@@ -30,7 +30,7 @@ public class Comment {
 	@ManyToOne
 	private Feeds Comment_On;
 	
-	@OneToMany(mappedBy="Reply_Key")
+	@OneToMany(mappedBy="Reply_On_Comment_Key")
 	private Set<Reply> Comment_Reply;
 	
 	@Column(name = "Comment_Body")

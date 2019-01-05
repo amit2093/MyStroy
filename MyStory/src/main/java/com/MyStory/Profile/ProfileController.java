@@ -21,7 +21,7 @@ public class ProfileController {
 	@GetMapping(ConfigMain.SAVE_PROFILE)
 	@CrossOrigin(origins = ConfigMain.ANGULAR_URL)
 	public void createProfile(ProfileDto profileDto) {
-		profileDto.setProfile_Name("Amit Saxena");
+		profileDto.setProfile_Name("Niket Pandey");
 		profileDto.setEmail("er.amit1493@gmail.com");
 		profileDto.setWork("Digital Harbour INC");
 		profileDto.setRelationship_Status("In a Relationship");
