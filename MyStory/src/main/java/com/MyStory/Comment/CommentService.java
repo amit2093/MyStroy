@@ -8,8 +8,10 @@ import org.springframework.stereotype.Repository;
 public interface CommentService {
 
 	public Comment create(CommentDto commentDto);
-	
-	public List<Comment> getAllComments();
+
+	public Reply createReply(ReplyDto replyDto);
+
+	public List<Comment> getAllCommentsByFeedKey(int feed_key);
 
 }
 

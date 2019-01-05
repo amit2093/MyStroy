@@ -4,9 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.MyStory.Profile.Profile;
-import com.MyStory.Profile.ProfileDto;
-
 @Repository
 public interface Friendship_RequestService {
 

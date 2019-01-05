@@ -5,9 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.MyStory.Profile.Profile;
-import com.MyStory.Profile.ProfileDto;
-
 @Service
 public class Friendship_RequestServiceImpl implements Friendship_RequestService{
 

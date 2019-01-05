@@ -8,6 +8,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.MyStory.Profile.Profile;
+
 @Service
 public class FeedsServiceImpl implements FeedsService{
 	
@@ -16,8 +18,20 @@ public class FeedsServiceImpl implements FeedsService{
 	
 	@Override
 	public Feeds create(FeedsDto feedsDto) {
+		Profile profile = new Profile();
+		profile.setProfile_Key(feedsDto.getFeed_Uploaded_By().getProfile_Key());
+		
 		Feeds feeds = new Feeds();
-		feeds.setImageUrl(feedsDto.getImageUrl());
+		feeds.setFeed_Key(feedsDto.getFeed_Key());
+		feeds.setFeed_Title(feedsDto.getFeed_Title());
+		feeds.setFeed_Description(feedsDto.getFeed_Description());
+		feeds.setTotal_Likes(feedsDto.getTotal_Likes());
+		feeds.setFeed_Upload_Date(feedsDto.getFeed_Upload_Date());
+		feeds.setFeed_Uploaded_By(profile);
+		feeds.setImage_Url(feedsDto.getImage_Url());
+		feeds.setIs_Feed_Deleted(feedsDto.isIs_Feed_Deleted());
+		feeds.setTotal_Views(feedsDto.getTotal_Views());
+		
 		return feedsRepository.save(feeds);
 	}
 	
@@ -36,7 +50,7 @@ public class FeedsServiceImpl implements FeedsService{
 	}
 
 	@Override
-	public Optional<Feeds> getFeed(int feedId) {
-		return feedsRepository.findById(feedId);
+	public Optional<Feeds> getFeed(int feed_key) {
+		return feedsRepository.findById(feed_key);
 	}
 }
