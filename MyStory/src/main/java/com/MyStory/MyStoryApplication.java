@@ -8,7 +8,19 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages= {"com.MyStory"})
 public class MyStoryApplication {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {    
 		SpringApplication.run(MyStoryApplication.class, args);
 	}
+	
+//	@Bean
+//	public RestTemplate restTemplate() {
+//	    return new RestTemplate();
+//	}
+//	
+//	@Bean
+//	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+//	   // Do any additional configuration here
+//	   return builder.build();
+//	}
+
 }

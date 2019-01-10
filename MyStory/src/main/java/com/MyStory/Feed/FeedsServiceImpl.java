@@ -8,7 +8,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.MyStory.Image.Images;
 import com.MyStory.Profile.Profile;
 
 @Service
