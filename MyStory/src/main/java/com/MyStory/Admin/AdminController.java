@@ -44,6 +44,20 @@ public class AdminController {
 		return dto;
 	}
 
-	
+		@GetMapping("/testJson")
+	public String test() {
+		return "{\r\n" + 
+				"    \"cols\": [{ \"type\": \"string\" }, { \"type\": \"number\" }],\r\n" + 
+				"    \"rows\": [\r\n" + 
+				"        { \"c\": [{ \"v\": \"January\" } , { \"v\": 50 }] },\r\n" + 
+				"        { \"c\": [{ \"v\": \"February\" }, { \"v\": 10 }] },\r\n" + 
+				"        { \"c\": [{ \"v\": \"March\" }   , { \"v\": 15 }] },\r\n" + 
+				"        { \"c\": [{ \"v\": \"April\" }   , { \"v\": 24 }] },\r\n" + 
+				"        { \"c\": [{ \"v\": \"May\" }     , { \"v\": 15 }] },\r\n" + 
+				"        { \"c\": [{ \"v\": \"June\" }    , { \"v\": 18 }] },\r\n" + 
+				"        { \"c\": [{ \"v\": \"July\" }    , { \"v\": 50 }] }\r\n" + 
+				"    ]\r\n" + 
+				"}";
+	}
 
 }
